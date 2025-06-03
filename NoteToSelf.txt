@@ -4,4 +4,5 @@ Don't get overwhelmed, you learned a lot very fast, just go through it once in 5
 
 Note: Using DI helps delegate the object lifecycle management to spring.
 
-#Autowire annotation: Adding Autowire over a class that creates an object from another class allow us to connect the two and therefore the object to be created.
+# Autowire annotation: Adding Autowire over a class that creates an object from another class allow us to connect the two and therefore the object to be created.
+# Skipping Spring w/o Boot
