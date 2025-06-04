@@ -22,12 +22,27 @@ public class productService {
 
     public product getProductById(int prodId){
         return products.stream()
-                        .filter(p -> p.getProdId() == prodId)
-                        .findFirst().orElse(new product(100, null, 0));
+                   .filter(p -> p.getProdId() == prodId)
+                   .findFirst()
+                   .orElse(null); // Return null if not found
     }
 
     public void addProduct(product prod) {
         products.add(prod);
+    }
 
+    public boolean updateProduct(int prodId, product prod) {
+    for (int i = 0; i < products.size(); i++) {
+        if (products.get(i).getProdId() == prodId) {
+            products.get(i).setProdName(prod.getProdName());
+            products.get(i).setProdPrice(prod.getProdPrice());
+            // Uncomment if you want to update prodId as well:
+            // products.get(i).setProdId(prod.getProdId());
+            return true;
+        }
+    }
+    return false;
     }
 }
+
+

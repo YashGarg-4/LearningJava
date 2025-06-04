@@ -18,6 +18,11 @@ public class product {
     }
 
     public int getProdId() { return prodId; }
-    public String getName() { return name; }
-    public int getPrice() { return price; }
+    public String getProdName() { return name; }
+    public int getProdPrice() { return price; }
+
+
+    public void setProdId(int prodId) { this.prodId = prodId; }
+    public void setProdName(String name) { this.name = name; }
+    public void setProdPrice(int price) { this.price = price; }
 }
