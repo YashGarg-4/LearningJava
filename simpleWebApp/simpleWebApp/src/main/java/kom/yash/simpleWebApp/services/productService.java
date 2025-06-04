@@ -26,8 +26,8 @@ public class productService {
                         .findFirst().orElse(new product(100, null, 0));
     }
 
-    public product addProduct(product prod) {
+    public void addProduct(product prod) {
         products.add(prod);
-        return prod;
+
     }
 }
