@@ -9,3 +9,7 @@ Note: Using DI helps delegate the object lifecycle management to spring.
 
 # @RestController: Signifies this class will handle the page requests
 # @RequestMapping("/"): Annotates which function to call when "/" is called
+
+#CRUD: Create Read Update Delete.. Using HTTP (protocol) methods: Post, Get, Put, Delete
+
+#PathVariable: This annotation allows whatever entered in the URL to be taken as a template literal for input into the controller.

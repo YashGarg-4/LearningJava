@@ -8,7 +8,6 @@ import kom.yash.simpleWebApp.models.product;
 @Service
 public class productService {
 
-    
     List<product> products = Arrays.asList(
         new product(1, "Laptop", 50000),
         new product(2, "Smartphone", 30000),
@@ -19,4 +18,9 @@ public class productService {
         return products;
     }
 
+    public product getProductById(int prodId){
+        return products.stream()
+                        .filter(p -> p.getProdId() == prodId)
+                        .findFirst().get();
+    }
 }
