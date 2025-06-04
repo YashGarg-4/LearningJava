@@ -13,3 +13,9 @@ Note: Using DI helps delegate the object lifecycle management to spring.
 #CRUD: Create Read Update Delete.. Using HTTP (protocol) methods: Post, Get, Put, Delete
 
 #PathVariable: This annotation allows whatever entered in the URL to be taken as a template literal for input into the controller.
+
+#@GetMapping and @PostMapping: Two subsets of @RequestMapping, same URL may need two diff operations(Get and Post) hence annotating in the controller with the right annotation should be used to eliminate confusion.
+
+#Postman: Used for API testing, you can test Post without creating a form or any frontend.
+
+#@RequestBody annotation receives the data from the post call body.
