@@ -1,6 +1,7 @@
 package kom.yash.simpleWebApp.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -35,6 +36,11 @@ public class productController {
     @PutMapping("/product/{prodId}")
     public void updateProduct(@PathVariable int prodId, @RequestBody product prod) {
         productService.updateProduct(prodId, prod);
+    }
+
+    @DeleteMapping("/product/{prodId}")
+    public void deleteProduct(@PathVariable int prodId) {
+        productService.deleteProduct(prodId);
     }
         
 }

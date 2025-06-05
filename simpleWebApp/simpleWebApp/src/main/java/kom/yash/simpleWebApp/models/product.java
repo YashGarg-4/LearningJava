@@ -2,9 +2,14 @@ package kom.yash.simpleWebApp.models;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 @Component
+@Entity
 public class product {
 
+    @Id
     private int prodId;
     private String name;
     private int price;
