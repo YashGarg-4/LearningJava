@@ -1,0 +1,13 @@
+#Model:
+	#Products:
+		#Id: Primary Key, Integer
+		#Name: String
+		#Category: String
+		#Desc: String
+		#Brand: String
+		#Price: Integer
+		#ReleaseDate: Date
+		#Available: Bool
+		#Qty: Integer
+		#Image: ...
+		

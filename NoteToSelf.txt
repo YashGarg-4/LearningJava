@@ -30,3 +30,7 @@ Note: Using DI helps delegate the object lifecycle management to spring.
 #/h2-console to view the DB
 
 #View the Application Property changes to initialize the DB
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor //These three annotationfrom lombok help reduce the boiler plate code (Automates getters, setters and constructors for the fields)
