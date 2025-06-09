@@ -33,4 +33,4 @@ Note: Using DI helps delegate the object lifecycle management to spring.
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor //These three annotationfrom lombok help reduce the boiler plate code (Automates getters, setters and constructors for the fields)
+@AllArgsConstructor //These three annotations from lombok help reduce the boiler plate code (Automates getters, setters and constructors for the fields)

@@ -11,3 +11,6 @@
 		#Qty: Integer
 		#Image: ...
 		
+#Always ensure SQL query categories are in snake_case
+
+# Add CrossOrigin annotation to the controller to allow the frontend and backend to communicate
