@@ -34,3 +34,5 @@ Note: Using DI helps delegate the object lifecycle management to spring.
 @Data
 @NoArgsConstructor
 @AllArgsConstructor //These three annotations from lombok help reduce the boiler plate code (Automates getters, setters and constructors for the fields)
+
+#Issue I faced yday with creating new product was that I was sending ID also which was not required as I'm alr auto generating ID

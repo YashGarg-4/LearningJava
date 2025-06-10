@@ -5,4 +5,5 @@ INSERT INTO product ( name, category, dscpn, brand, price, release_date, availab
     ('Mahindra Thar', 'Cars', 'A rugged off-road SUV with a powerful engine and modern amenities.', 'Mahindra', 1200000, '2024-04-01', true, 30),
     ('Honda City', 'Cars', 'A premium sedan with a sleek design and advanced safety features.', 'Honda', 1100000, '2024-05-01', true, 60);
 
--- ALWAYS ENSURE SQL QUERY CATEGORIES ARE IN SNAKE_CASE
+-- ALWAYS ENSURE SQL QUERY CATEGORIES ARE IN SNAKE_CASE4
+
