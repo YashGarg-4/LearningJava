@@ -1,5 +1,6 @@
 package com.komdox.chipsTrial.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +14,8 @@ import com.komdox.chipsTrial.services.TableService;
 @RequestMapping("/table")
 public class TableController {
     
-    private final TableService tableService = new TableService();
+    @Autowired
+    private TableService tableService;
     
     // Join the game table
     @PostMapping("/join")

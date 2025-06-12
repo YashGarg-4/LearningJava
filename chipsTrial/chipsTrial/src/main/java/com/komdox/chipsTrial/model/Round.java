@@ -28,4 +28,8 @@ public class Round {
         return bets;
     }
 
+    public boolean getDealerPlayed() {
+        return dealearPlayed;
+    }
+
 }

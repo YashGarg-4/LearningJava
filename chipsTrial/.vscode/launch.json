@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ChipsTrialApplication<chipsTrial>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.komdox.chipsTrial.ChipsTrialApplication",
+            "projectName": "chipsTrial",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
