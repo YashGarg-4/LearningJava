@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.komdox.chipsTrial.model.Game;
 import com.komdox.chipsTrial.model.Player;
 import com.komdox.chipsTrial.services.TableService;
 
@@ -25,9 +24,9 @@ public class TableController {
     
     // Start new game
     @PostMapping("/start")
-    public ResponseEntity<Game> startGame() {
-        Game newGame = tableService.initializeGame();
-        return ResponseEntity.ok(newGame);
+    public void startGame() {
+        tableService.initializeGame();
     }
+
 }
 
