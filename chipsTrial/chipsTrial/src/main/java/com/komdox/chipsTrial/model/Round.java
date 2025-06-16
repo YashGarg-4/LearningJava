@@ -20,7 +20,7 @@ public class Round {
     private int id=1; // Unique identifier for the round // Default value set to 1 as we want singeleton Round enttry in the table
     private boolean dealearPlayed;
     private int currentPlayerIndex;
-    private int currentBet;
+    private int currentBet = 1;
     @ElementCollection
     private Map<Integer, Integer> bets; 
 

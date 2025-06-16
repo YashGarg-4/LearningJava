@@ -37,11 +37,7 @@ public class GameService {
     // Game game = gameRepo.findById(1).get();
 
     public void processMove(Move move) {
-            Round round = roundRepo.findById(1).get();
-
-        if(round.getDealerPlayed() && round.getBets().get(move.getPlayerId()).equals(round.getCurrentBet())){
-            roundOver();
-        } // make condition to check if dealer has played
+        Round round = roundRepo.findById(1).get();
 
         switch (move.getAction()) {
             case "CALL":
@@ -72,15 +68,27 @@ public class GameService {
                 updatePlayerPurse(move);
                 updateRoundMap(move);
                 advancePlayerTurn(move);
+                break;
             default:
                 System.out.println("Invalid move: " + move);
         }
         
         PokerTable table = tableRepo.findById(1).get(); // Assuming this method retrieves the current table
-        if (move.getPlayerId() == table.getDealerIndex()) {
+        if (move.getPlayerId() == table.getDealerIndex() + 1) {
             round.setDealearPlayed(true); // Mark the dealer as having played
         }
-    }
+
+        if(round.getDealerPlayed() && 
+            round.getBets().get(move.getPlayerId()).equals(getMaxBetFromMap(round.getBets()))){
+            roundOver();
+        } // make condition to check if dealer has played
+}
+
+private Integer getMaxBetFromMap(Map<Integer, Integer> bets) {
+    return bets.values().stream()
+              .max(Integer::compareTo)
+              .orElse(0);
+}
 
     private void roundOver() {
         newRound();
@@ -100,7 +108,7 @@ public class GameService {
         Map<Integer, Integer> bets = game.getActivePlayers().stream()
             .collect(Collectors.toMap(
                 Player::getId,    // Key: player ID
-                player -> 0      // Value: initial bet of 0
+                _ -> 0      // Value: initial bet of 0
             ));
         round.setBets(bets);
         
@@ -198,8 +206,4 @@ public class GameService {
         }        
     }
 
-    public Object getCurrentGame() {
-        return gameRepo.findById(1).get();
-
-    }
 }

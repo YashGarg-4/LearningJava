@@ -7,6 +7,9 @@ import org.springframework.messaging.handler.annotation.Payload;
 // import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 // import com.komdox.chipsTrial.model.Game;
 import com.komdox.chipsTrial.model.Move;
@@ -27,13 +30,18 @@ public class GameController {
     public void handleMove(@Payload Move move) {
         gameService.processMove(move);
     }
-    
-    // Current game state
-    @GetMapping("/status")
-    public ResponseEntity<Object> gameStatus() {
-        return ResponseEntity.ok(gameRepo.findById(1)
-                .orElseThrow(() -> new IllegalArgumentException("Game not found")));
+
+    @PostMapping("/move")
+    @ResponseBody
+    public ResponseEntity<String> handleMoveRest(@RequestBody Move move) {
+        try {
+            gameService.processMove(move);
+            return ResponseEntity.ok("Move processed successfully");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Error processing move: " + e.getMessage());
+        }
     }
+    
 }
 
 
